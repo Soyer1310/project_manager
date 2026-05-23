@@ -8,8 +8,6 @@ allTheTasks = [
   { id: 6, title: 'watch youtuube', completed: false, priority: 'low' },
 ];
 
-const getHighPriorityTasks = tasks => tasks.filter(task => task.priority === 'high');
+const getHighPriorityTasks = tasks => tasks.filter(task => task.priority === 'high' && !task.completed);
 
-const highPriotityTasks = getHighPriorityTasks(allTheTasks);
-
-console.log(highPriotityTasks);
+console.log(getHighPriorityTasks(allTheTasks));
