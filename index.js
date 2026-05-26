@@ -20,5 +20,13 @@ const formatHighPriorityTasks = tasks => tasks
      statusText: completed ? `ЗАВЕРШЕНО: ${title}` : `В РАБОТЕ: ${title}`
   }));
 
-console.log(getTaskTitles(tasks));
-console.log(formatHighPriorityTasks(tasks));
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+const fetchAndFormatTasks = async (tasksArray) => {
+  console.log("Загрузка задач из базы данных...");
+  await delay(1500);
+  const highPriorityTasks = formatHighPriorityTasks(tasksArray);
+  console.log(highPriorityTasks);
+};
+
+fetchAndFormatTasks(tasks);
